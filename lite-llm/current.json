@@ -1,20 +1,30 @@
 {
   "project": "LITE.LLM",
-  "objective": "PRD-LEGACY-FILESYSTEM-HARDENING-0014",
-  "result": "PASS",
-  "updated_at": "2026-09-05T10:46:15+07:00",
+  "flow_id": "ID009",
+  "objective": "PRD-PROMOTION-AND-VALIDATION-0015",
+  "result": "FAIL_ROLLED_BACK",
+  "updated_at": "2026-09-05T11:46:29+07:00",
   "execution_host": "ADMIN_WINDOWS_WORKSTATION",
   "git_sha": "557b0647beae5fd1bf4a7c58e933a8e1440a8320",
-  "production_state": "UNCHANGED",
-  "deployment_state": "READONLY_PREFLIGHT_PASS_NO_DEPLOYMENT",
+  "qualified_source_sha": "354eda7e89f28cdf7601ea7a342ca48437ab8696",
+  "qualified_source_tree": "d42e856126a4a674729bac8a9d4e349b5a1cd40b",
+  "production_state": "HEALTHY_WITH_MIGRATION_008_PRESERVED",
+  "deployment_state": "ROLLED_BACK_NOT_RETAINED",
+  "post_deploy_validation": "NOT_RUN_ROLLBACK_PRECEDED_VALIDATION",
+  "rollback_result": "PASS",
+  "rollback_stability_seconds": 120,
+  "final_service_restart_counts": 0,
+  "synthetic_residue": 0,
+  "security_incident": "SECRET_BEARING_COMPOSE_VALUES_PRINTED_TO_TASK_OUTPUT",
   "current_work": "NONE",
-  "blockers": [],
-  "risks": [
-    "PRD_PROMOTION_REQUIRES_SEPARATE_APPROVAL"
+  "blockers": [
+    "PRODUCTION_CREDENTIAL_ROTATION_REQUIRED",
+    "RUNNER_NEWLINE_FIX_AND_REQUALIFICATION_REQUIRED",
+    "NEW_PRD_APPROVAL_REQUIRED"
   ],
-  "next_step": "AWAIT_SEPARATE_ADMINISTRATOR_APPROVAL_BEFORE_ANY_PRD_DEPLOYMENT",
-  "eta": "COMPLETE",
-  "secret_scan": "PASS",
-  "report_url": "https://status.itech3s.com/lite-llm/archive/20260905-104615-PRD-LEGACY-FILESYSTEM-HARDENING-0014-PASS.md",
-  "report_sha256": "249eb62c41d66e5e41eb9c3a5f036aba2081566b4616734f854c4978d55738fb"
+  "next_step": "AUTHORIZE_BOUNDED_PRODUCTION_CREDENTIAL_ROTATION_INCIDENT_RESPONSE",
+  "eta": "WAITING_FOR_ADMINISTRATOR_DECISION",
+  "secret_scan": "PASS_SANITIZED_REPORT_ONLY",
+  "report_url": "https://status.itech3s.com/lite-llm/archive/20260905-114629-PRD-PROMOTION-AND-VALIDATION-0015-FAIL-ROLLED-BACK.md",
+  "report_sha256": "87b4766d7589e77a517807b42aa313a97b46a49a19348529f73f4678c445cd0a"
 }
