@@ -33,3 +33,38 @@ PUBLIC_REPORT_URL=https://status.itech3s.com/lite-llm/archive/20260905-162424-PR
 ```
 
 ID011 promoted the four approved application services and passed every readiness gate, but the two-identity portal validation failed because the loopback HTTP test client did not return the production `Secure` session cookie. Automatic rollback restored the prior image baseline, all health gates passed, restart counts remained zero, migration `008` stayed applied, and synthetic residue is zero. The harness is corrected locally, but the objective forbids a repeated production retry in the same flow. A new explicit PRD repromotion approval is required.
+# LITE.LLM Current Status
+
+```text
+PROJECT=LITE.LLM
+FLOW_ID=ID012
+OBJECTIVE_ID=PRD-USER-ACCESS-RECOVERY-0020
+STATE=COMPLETED
+RESULT=PASS
+UPDATED_AT=2026-09-05T17:45:00+07:00
+EXECUTION_HOST=ADMIN_WINDOWS_WORKSTATION
+GIT_SHA=93c77a660b1dd590ee7e8348e3a42f32398de197
+PRODUCTION_STATE=HEALTHY_USER_VERIFIED
+PRODUCTION_APPLICATION_DEPLOYMENT=NONE
+ROOT_CAUSE_IDENTIFIED=PASS
+USER_ACCESS_RECOVERY=PASS
+HTTPS_PORTAL_ACCESS=PASS
+EXISTING_ACCOUNTS_PRESERVED=PASS
+API_ACCESS=PASS
+SETUP_LINK_COMPATIBILITY=PASS
+REQUIRED_SERVICES_HEALTHY=PASS
+USER_IMPACT=RESOLVED
+MIGRATION_008_PRESERVED=PASS
+FINAL_SERVICE_RESTART_COUNTS=0
+RUNNER_UNIT_TESTS=7_PASS
+SECRET_OUTPUT=NONE
+BLOCKERS=NONE
+CURRENT_WORK=NONE
+NEXT_STEP=AWAIT_ID013_APPROVAL
+ETA=WAITING_FOR_ADMINISTRATOR_DECISION
+SECRET_SCAN=PASS
+LOCAL_REPORT_PATH=C:\Users\admin\Documents\Lite LLM\worktrees\short-codex-current-main\reports\20260905-174500-PRD-USER-ACCESS-RECOVERY-0020-PASS.md
+PUBLIC_REPORT_URL=https://status.itech3s.com/lite-llm/archive/20260905-174500-PRD-USER-ACCESS-RECOVERY-0020-PASS.md
+```
+
+ID012 restored the current user's Portal password on the same account and repaired setup-link delivery with the already-active matching API key. Real HTTPS Portal login, existing API access, setup-link compatibility, account preservation, service health, and zero restart counts passed. Await explicit ID013 approval.
