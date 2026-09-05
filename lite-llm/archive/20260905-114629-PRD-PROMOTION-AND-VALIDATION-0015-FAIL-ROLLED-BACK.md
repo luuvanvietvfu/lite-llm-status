@@ -60,7 +60,7 @@ After all promotion health gates printed PASS, a trailing carriage-return byte i
 
 During sealed-checkpoint review, normalized Compose excerpts containing secret-bearing environment values were printed to task output. No secret value is repeated in this report. The affected production runtime credentials must be treated as exposed, including the printed LiteLLM, database, 9Router, correlation, Gateway Admin, and Portal secret classes.
 
-The root-only evidence directory remains protected. QAS/PRD candidate image tags and transient transfer archives were removed after rollback. A separate administrator-approved credential-rotation incident response is required before another promotion.
+The root-only evidence directory remains protected. PRD candidate image tags and all transient transfer archives were removed after rollback; the qualified QAS images remain available on the isolated QAS host. A separate administrator-approved credential-rotation incident response is required before another promotion.
 
 ## Rollback And Final State
 
