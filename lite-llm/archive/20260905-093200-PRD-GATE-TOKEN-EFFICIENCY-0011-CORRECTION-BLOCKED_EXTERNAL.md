@@ -1,0 +1,80 @@
+# LITE.LLM ID005 Read-Only Gate Correction
+
+```text
+PROJECT=LITE.LLM
+FLOW_ID=ID005
+OBJECTIVE_ID=PRD-GATE-TOKEN-EFFICIENCY-0011
+STATE=BLOCKED
+RESULT=BLOCKED_EXTERNAL
+UPDATED_AT=2026-09-05T09:32:00+07:00
+EXECUTION_HOST=ADMIN_WINDOWS_WORKSTATION
+PRODUCTION_STATE=UNCHANGED
+PRODUCTION_MUTATION=NONE
+PRD_DEPLOYMENT=NO
+PRD_READY=NO
+QUALIFIED_SOURCE_SHA=354eda7e89f28cdf7601ea7a342ca48437ab8696
+PROTECTED_MAIN_MERGE_SHA=557b0647beae5fd1bf4a7c58e933a8e1440a8320
+PROTECTED_MAIN_MERGE=PASS
+MERGED_TREE_EQUALS_QUALIFIED_SOURCE=PASS
+PRD_READONLY_PREFLIGHT=FAIL_LEAST_PRIVILEGE
+QAS_POST_MERGE_SMOKE=PASS
+PRD_PROMOTION_PACKAGE=PASS
+TOKEN_EFFICIENCY_RESULT=PASS
+EFFICIENCY_TELEMETRY=PARTIAL
+KNOWN_BLOCKERS=APPROVED_LOCAL_PRD_CREDENTIAL_AUTHENTICATES_AS_OVERPRIVILEGED_ACCOUNT
+SECRET_SCAN=PASS
+SUPERSEDES_REPORT=20260905-092400-PRD-GATE-TOKEN-EFFICIENCY-0011-BLOCKED_EXTERNAL.md
+```
+
+## Correction
+
+The preceding ID005 checkpoint correctly recorded the protected-main merge, exact tree equality, QAS smoke, promotion package, and absence of production mutation. It incorrectly described restoration of an obsolete legacy private-key path as the next action. ID005 explicitly prohibited that requirement, so this newer immutable checkpoint supersedes that wording.
+
+The already-approved local protected PRD credential mechanism is present and authenticates successfully. Its server-side identity is `codex-deploy`. Bounded non-mutating capability checks proved that this identity has unrestricted passwordless sudo and Docker-group membership.
+
+```text
+LOCAL_PROTECTED_PRD_CREDENTIAL=AVAILABLE
+AUTHENTICATION=PASS
+REMOTE_IDENTITY=codex-deploy
+SUDO_CAPABILITY=NOPASSWD_ALL
+DOCKER_GROUP_ACCESS=YES
+ROOT_ETC_OPT_DIRECT_WRITE_AS_LOGIN_USER=NO
+LEAST_PRIVILEGE_REQUIREMENT=FAIL
+IDENTITY_ACCEPTED_FOR_PRD_PREFLIGHT=NO
+OBSOLETE_LEGACY_KEY_RECOVERY_REQUIRED=NO
+```
+
+ID005 required the preflight identity to have no sudo or write capability. The approved local mechanism therefore cannot satisfy the gate in its current server-side authorization state. Automation did not use its elevated privileges and stopped after capability verification.
+
+## Preserved Passing Gates
+
+```text
+PROTECTED_MAIN_MERGE=PASS
+PROTECTED_MAIN_MERGE_SHA=557b0647beae5fd1bf4a7c58e933a8e1440a8320
+MERGE_METHOD=MERGE_COMMIT_WITHOUT_SQUASH
+QUALIFIED_SOURCE_SHA=354eda7e89f28cdf7601ea7a342ca48437ab8696
+QUALIFIED_SOURCE_TREE=d42e856126a4a674729bac8a9d4e349b5a1cd40b
+MERGED_TREE_EQUALS_QUALIFIED_SOURCE=PASS
+QAS_POST_MERGE_SMOKE=PASS
+QAS_REQUIRED_SERVICES_HEALTHY=PASS
+QAS_REQUIRED_SERVICE_RESTART_COUNTS=0
+PRD_PROMOTION_PACKAGE=PASS
+TOKEN_EFFICIENCY_POLICY=PASS
+TOKEN_EFFICIENCY_RESULT=PASS
+```
+
+The exact promotion assets, ordered deployment steps, validation gates, rollback image IDs, rollback commands, expected impact, and go/no-go criteria remain documented in the superseded report and are unchanged by this correction.
+
+## Result
+
+```text
+RESULT=BLOCKED_EXTERNAL
+PRD_READY=NO
+BLOCKER=APPROVED_LOCAL_PRD_CREDENTIAL_AUTHENTICATES_AS_CODEX_DEPLOY_WITH_NOPASSWD_SUDO_AND_DOCKER_ACCESS
+CURRENT_WORK=NONE
+NEXT_STEP=ESTABLISH_OR_REMAP_THE_ALREADY_APPROVED_LOCAL_PRD_MECHANISM_TO_A_STRICT_READONLY_SERVER_IDENTITY_WITHOUT_SUDO_DOCKER_OR_WRITE_CAPABILITY_THEN_RERUN_ONLY_THE_READONLY_PREFLIGHT
+ETA=WAITING_FOR_SERVER_SIDE_LEAST_PRIVILEGE_IDENTITY_REMEDIATION
+ADMIN_ACTION_REQUIRED=AUTHORIZE_OR_COMPLETE_SERVER_SIDE_LEAST_PRIVILEGE_REMEDIATION_FOR_THE_EXISTING_LOCAL_PRD_CREDENTIAL_MECHANISM
+```
+
+No production deployment, service change, configuration change, database change, routing change, or provider change occurred.
