@@ -2,37 +2,34 @@
 
 ```text
 PROJECT=LITE.LLM
-FLOW_ID=ID010
-OBJECTIVE_ID=PRD-INCIDENT-RECOVERY-AND-RUNNER-CORRECTION-0016
+FLOW_ID=ID011
+OBJECTIVE_ID=PRD-REPROMOTION-AND-FINAL-VALIDATION-0017
 STATE=COMPLETED
-RESULT=PASS
-UPDATED_AT=2026-09-05T13:58:00+07:00
+RESULT=FAIL_ROLLED_BACK
+UPDATED_AT=2026-09-05T16:24:24+07:00
 EXECUTION_HOST=ADMIN_WINDOWS_WORKSTATION
 GIT_SHA=93c77a660b1dd590ee7e8348e3a42f32398de197
 QUALIFIED_SOURCE_SHA=354eda7e89f28cdf7601ea7a342ca48437ab8696
 QUALIFIED_SOURCE_TREE=d42e856126a4a674729bac8a9d4e349b5a1cd40b
 PROTECTED_MAIN_MERGE_SHA=557b0647beae5fd1bf4a7c58e933a8e1440a8320
-PRODUCTION_STATE=HEALTHY
-PRODUCTION_APPLICATION_DEPLOYMENT=NONE
-PRODUCTION_APPLICATION_IMAGES=UNCHANGED
-CREDENTIAL_ROTATION=PASS
-OLD_CREDENTIALS_INVALIDATED=PASS
-NEW_CREDENTIALS_OPERATIONAL=PASS
+PRODUCTION_STATE=HEALTHY_BASELINE_RESTORED
+PRODUCTION_APPLICATION_DEPLOYMENT=ROLLED_BACK_NOT_RETAINED
+ROLLBACK_USED=YES
+ROLLBACK_RESULT=PASS
 MIGRATION_008_PRESERVED=PASS
-PRODUCTION_STABILITY_SECONDS=120
 FINAL_SERVICE_RESTART_COUNTS=0
-RUNNER_CORRECTION=PASS
 RUNNER_UNIT_TESTS=7_PASS
-QAS_RUNNER_REQUALIFICATION=PASS
-QAS_APPLICATION_REDEPLOY=NO
-PROMOTION_PACKAGE=PASS_PREPARED_NOT_DEPLOYED
-BLOCKERS=NEW_EXPLICIT_PRD_PROMOTION_APPROVAL_REQUIRED
+VALIDATION_RESULT=FAIL_LOOPBACK_SECURE_COOKIE_HARNESS
+VALIDATOR_CORRECTION=PASS_LOCAL_NOT_RETRIED
+SYNTHETIC_RESIDUE=0
+SECRET_OUTPUT=NONE
+BLOCKERS=NEW_EXPLICIT_PRD_REPROMOTION_APPROVAL_REQUIRED
 CURRENT_WORK=NONE
-NEXT_STEP=AWAIT_NEW_EXPLICIT_PRD_PROMOTION_APPROVAL
+NEXT_STEP=AWAIT_NEW_EXPLICIT_PRD_REPROMOTION_APPROVAL
 ETA=WAITING_FOR_ADMINISTRATOR_DECISION
 SECRET_SCAN=PASS
-LOCAL_REPORT_PATH=C:\Users\admin\Documents\Lite LLM\worktrees\short-codex-current-main\reports\20260905-135800-PRD-INCIDENT-RECOVERY-AND-RUNNER-CORRECTION-0016-PASS.md
-PUBLIC_REPORT_URL=https://status.itech3s.com/lite-llm/archive/20260905-135800-PRD-INCIDENT-RECOVERY-AND-RUNNER-CORRECTION-0016-PASS.md
+LOCAL_REPORT_PATH=C:\Users\admin\Documents\Lite LLM\worktrees\short-codex-current-main\reports\20260905-162424-PRD-REPROMOTION-AND-FINAL-VALIDATION-0017-FAIL-ROLLED-BACK.md
+PUBLIC_REPORT_URL=https://status.itech3s.com/lite-llm/archive/20260905-162424-PRD-REPROMOTION-AND-FINAL-VALIDATION-0017-FAIL-ROLLED-BACK.md
 ```
 
-ID010 completed the production credential incident response without deploying application images. All exposed credential classes were rotated, old credentials were invalidated, LiteLLM at-rest material was re-encrypted, migration `008` remained applied, and production stayed healthy for 120 seconds with zero restarts. The newline-safe remote runner passed seven focused tests and QAS deploy/rollback-path requalification without redeploying QAS applications. A fresh promotion package is prepared but not deployed; a new explicit PRD promotion approval is required.
+ID011 promoted the four approved application services and passed every readiness gate, but the two-identity portal validation failed because the loopback HTTP test client did not return the production `Secure` session cookie. Automatic rollback restored the prior image baseline, all health gates passed, restart counts remained zero, migration `008` stayed applied, and synthetic residue is zero. The harness is corrected locally, but the objective forbids a repeated production retry in the same flow. A new explicit PRD repromotion approval is required.
