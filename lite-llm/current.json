@@ -1,22 +1,22 @@
 {
   "project": "LITE.LLM",
-  "objective": "PRD-INCIDENT-RECOVERY-AND-RUNNER-CORRECTION-0016",
-  "result": "PASS",
-  "updated_at": "2026-09-05T13:58:00+07:00",
+  "objective": "PRD-REPROMOTION-AND-FINAL-VALIDATION-0017",
+  "result": "FAIL_ROLLED_BACK",
+  "updated_at": "2026-09-05T16:24:24+07:00",
   "execution_host": "ADMIN_WINDOWS_WORKSTATION",
   "git_sha": "93c77a660b1dd590ee7e8348e3a42f32398de197",
-  "production_state": "HEALTHY",
-  "deployment_state": "INCIDENT_RECOVERY_COMPLETE_PROMOTION_NOT_DEPLOYED",
+  "production_state": "ROLLED_BACK",
+  "deployment_state": "ROLLED_BACK_NOT_RETAINED",
   "current_work": "NONE",
   "blockers": [
-    "NEW_EXPLICIT_PRD_PROMOTION_APPROVAL_REQUIRED"
+    "NEW_EXPLICIT_PRD_REPROMOTION_APPROVAL_REQUIRED"
   ],
   "risks": [
-    "PROMOTION_PACKAGE_PREPARED_NOT_DEPLOYED"
+    "VALIDATOR_LOOPBACK_SECURE_COOKIE_FIX_NOT_PRODUCTION_RETRIED"
   ],
-  "next_step": "AWAIT_NEW_EXPLICIT_PRD_PROMOTION_APPROVAL",
+  "next_step": "AWAIT_NEW_EXPLICIT_PRD_REPROMOTION_APPROVAL",
   "eta": "WAITING_FOR_ADMINISTRATOR_DECISION",
   "secret_scan": "PASS",
-  "report_url": "https://status.itech3s.com/lite-llm/archive/20260905-135800-PRD-INCIDENT-RECOVERY-AND-RUNNER-CORRECTION-0016-PASS.md",
-  "report_sha256": "e63baf3ac3f5c9193a105b496706fe274df61955fbfb86a107633f4e489eb4c6"
+  "report_url": "https://status.itech3s.com/lite-llm/archive/20260905-162424-PRD-REPROMOTION-AND-FINAL-VALIDATION-0017-FAIL-ROLLED-BACK.md",
+  "report_sha256": "72c3168bebcdc1f2d8a38746cf239c59cdcfb173fed0fc44433265f2f51e0e1f"
 }
