@@ -1,22 +1,18 @@
 {
   "project": "LITE.LLM",
-  "objective": "ADMIN-MODEL-CATALOG-CHECKBOX-0025",
-  "result": "RECOVERY_FAILED",
-  "updated_at": "2026-09-05T23:26:02+07:00",
+  "objective": "SETUP-EFFECTIVE-MODEL-VALIDATION-0028",
+  "result": "PASS",
+  "updated_at": "2026-09-06T10:26:10+07:00",
   "execution_host": "ADMIN_WINDOWS_WORKSTATION",
-  "git_sha": "93c77a660b1dd590ee7e8348e3a42f32398de197",
+  "git_sha": "7a361a9fa8116ccbe7acf4e8eae497dd87de5fcb",
   "production_state": "HEALTHY",
-  "deployment_state": "ADMIN_ONLY_R2_RETAINED",
+  "deployment_state": "LITELLM_USER_ADMIN_AND_CODEX_SETUP_DELIVERY_ONLY",
   "current_work": "NONE",
-  "blockers": [
-    "SECRET_OUTPUT_NONE_GATE_FAILED"
-  ],
-  "risks": [
-    "PRIOR_TRANSCRIPT_CONTAINS_SECRET_BEARING_DIAGNOSTIC_OUTPUT"
-  ],
-  "next_step": "START_A_NEW_CLEAN_FLOW_IF_A_STRICT_SECRET_OUTPUT_NONE_PASS_ATTESTATION_IS_REQUIRED",
+  "blockers": [],
+  "risks": [],
+  "next_step": "OBJECTIVE_COMPLETE",
   "eta": "COMPLETE",
   "secret_scan": "PASS",
-  "report_url": "https://status.itech3s.com/lite-llm/archive/20260905-232602-ADMIN-MODEL-CATALOG-CHECKBOX-0025-RECOVERY_FAILED.md",
-  "report_sha256": "cf94f6b8cfb597b74e550c50deab791172b776a6c88ec0cff58e89bea63ba541"
+  "report_url": "https://status.itech3s.com/lite-llm/archive/20260906-102610-SETUP-EFFECTIVE-MODEL-VALIDATION-0028-PASS.md",
+  "report_sha256": "0219a98e003f3bb3ccac9711d6e1c6a1cd4ad478c64933a2e1d72050a6dfc438"
 }
